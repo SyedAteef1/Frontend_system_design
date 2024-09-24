@@ -38,18 +38,47 @@ app.post("/api/services",(req,res)=>{
 app.put("/api/services/:id",(req,res)=>{
     const body=req.body
     const id=req.params.id
-console.log(req.body)
+
     services=services.map((p)=>{
+        console.log(req.body)
         if(p.id==id){
             return {
-                id,
-                ...body,
+                 id,
+                 ...body
             };
+            
            
-        }return p;
+        }else{
+            return p
+        };
         
     })
 res.json(services)
+})
+
+
+app.delete(("/api/services/:id"),(req,res)=>{
+        const id= req.params.id
+        console.log(id)
+        services =services.filter((p) => p.id!=id)
+        res.json(services)
+})
+
+
+app.patch(("/api/services/:id"),(req,res)=>{
+    const id=req.params.id
+    const service=services.find((p)=> p.id==id)
+    const body=req.body
+    services=services.map((p)=>{
+        if(p.id==id){
+            return {
+                ...service,
+                ...body
+            }
+
+        }return p
+    })
+    res.json(services)
 })
 
 app.listen(PORT,()=>{
