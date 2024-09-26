@@ -68,22 +68,14 @@ const typeDefs= gql(`
 
     const resolvers = {
         Query:{
-            users:()=>{
-                return users
-            },
-            services:()=>{
-                return services
-            }
+            users:()=> users,
+            services:()=>services
         },
         User:{
-            services:(user)=>{
-                return services.filter((service)=>{service.provider.includes(user.id)})
-            }
+            services:(user)=> services.filter((service)=>service.provider.includes(user.id))
         },
         Service:{
-            provider:(service)=>{
-                return users.filter((user)=>{user.services.includes(service.id)})
-            }
+            provider:(user)=>provider.filter((usera)=>users.services.includes(user.id))
         }
 
     }
