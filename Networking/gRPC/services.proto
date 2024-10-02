@@ -1,0 +1,17 @@
+syntax="proto3"
+
+message services{
+    string id = 1;
+    string title=2;
+    string description=3;
+}
+
+service allservices{
+    rpc getallservices (empty) return ()
+}
+
+message empty{}
+
+message repservices{
+    repeated services listData = 1;
+}
