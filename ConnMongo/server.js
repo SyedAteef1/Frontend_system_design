@@ -1,9 +1,10 @@
-import express from 'express';
-import mongoose from 'mongoose';
-
+const express=require('express')
+const mongoose=require('mongoose')
+require('dotenv').config()
 const app=express();
-try{
-        mongoose.connect(process.env.MONGODB_URL)
+ try{
+       mongoose.connect(process.env.MONGODB_URL)
+       console.log('the connection is sucessfully established')
 }catch(err){
     console.log(err)
 }
