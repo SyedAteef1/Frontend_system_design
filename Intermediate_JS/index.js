@@ -720,14 +720,20 @@
 //         return `alncbsdbiuabsudi`
 //     }   
 // }
-// const createuser= (firstname,age,salary)=>{
-//     const user= Object.create(usermethod);
+// function createuser(firstname,age,salary){
+//     const user= Object.create(createuser.prototype);
 //     user.firstname=firstname;
 //     user.age=age;
 //     user.salary=salary;
 //     return user;
 // }
+// console.log(createuser.prototype)
+// createuser.prototype.about=function(){
+//     return `${this.firstname} ${this.age}`
+// }
+
 // const user1=createuser("ateef",18,10000);
+// console.log(user1)
 // console.log(user1.about())
 
 // function helloi(){
@@ -745,3 +751,128 @@
 //you can add your ow props 
 //javascript function===> function + object
 //name property ===>tells function name
+
+//--new keyword
+// empty object  this
+//return this
+
+// function Createuser(firstname,age){
+//     this.firstname =firstname;
+//     this.age=age;
+// }
+// Createuser.prototype.about=function(){
+//     console.log(`${this.firstname} ${this.age}`)
+// }
+
+// const user1=new Createuser("ateef",19);
+// console.log(user1)
+// user1.about()
+
+// for(let key in user1){
+//     // console.log(key)
+//     if(user1.hasOwnProperty(key)){
+//         console.log(key)
+//     }
+    
+// }
+//hasOwnProperty
+
+// const numbers=new Array(1,2,3)
+// console.log(numbers.length)
+// console.log(Array.prototype)
+// const numbers=[1,2,3]
+// console.log(Object.getPrototypeOf(numbers))
+//so as the above var is not a funciton but how it is refering many of the array function from its prototype ? so the thing is basically the array is created inner as const array=new array()
+// console.log(numbers)
+
+//the function retuns the object when we print the prototype and the array retunrs the array itself if we print the prototype
+
+// function hello(){
+//     console.log("hello world")
+
+// }
+// console.log(hello.prototype)
+// hello.prototype=[]
+// console.log(hello.prototype)
+// hello.prototype.thing="ateef"
+
+
+//-----class in js
+
+// class Createuser{
+//         constructor(firstname,lastname,age){
+//             console.log("constructor called")
+//             this.firstname=firstname;
+//             this.lastname=lastname;
+//             this.age=age;
+//         }
+//         about(){
+//             return `my name is ${this.firstname} and age is ${this.age}`
+//         }
+// }
+
+// const user1=new Createuser("ateef","quadri",19)
+// console.log(user1)
+// console.log(user1.about())
+// console.log(Object.getPrototypeOf(user1))
+
+class Animal{
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+
+    }
+    amar(){
+         if(this.age>5){
+            return `the animal ${this.name} is amar`
+         }else return `nothing`
+    }
+
+}
+const cat=new Animal("cat",2);
+// console.log(cat.amar())
+
+class Dog extends Animal{
+   constructor(name,age,speed){
+    super(name,age)
+this.speed=speed;
+    }
+        iscute(){
+            return this.age>19
+        }
+}
+const tommy=new Dog("ateef",20,45);
+console.log(tommy)
+
+//first it cheks the func in itself after that it will go to the superclass
+
+class Person{
+    constructor(name,age,salary){
+        this.name=name;
+        this.age=age;
+        this.salary=salary;
+    }
+    //by adding get it treats function as a property
+   get fullname(){
+        return `full name is ${this.name}`
+    }
+   set fullname(a){
+        
+        const [fname,lname]=a.split(" ")
+        console.log(fname)
+        console.log(lname)
+        this.fname==this.name
+    }
+    // setname(name){
+    //     this.name=name;
+    // }
+}
+//so the basic way to access the fullname function is 
+const person1=new Person("ateef",14,10000)
+// console.log(person1.fullname())
+//so the next method for this is 
+console.log(person1.fullname)
+// console.log(person1.setname("sohail"))
+console.log(person1.name)
+person1.fullname="syed ateef"
+console.log(person1)
