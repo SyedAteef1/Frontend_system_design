@@ -876,3 +876,168 @@ console.log(person1.fullname)
 console.log(person1.name)
 person1.fullname="syed ateef"
 console.log(person1)
+
+
+
+SCYN programming
+console.log("code starts")
+for(let i=0;i<1000;i++){
+    console.log("hey ther")
+}
+console.log("code ends here")
+
+settimeout
+
+console.log("set time ")
+function hello(){
+    console.log("hello world")
+}
+setTimeout(hello,10000)
+console.log("script end") 
+console.log("this is the start")
+function hello(){
+    console.log("hello world")
+}
+setTimeout(hello,0)
+console.log("this is the end ")
+console.log("this is the second end")
+console.log("hello world")
+for(let i=0;i<10000;i++){
+    console.log("this is for loop")
+}
+console.log("this is the outer of for loop")
+
+
+
+
+console.log("hey this is async")
+
+const id=setTimeout(() => {
+    for(let i=0;i<1000;i++){
+        console.log("this is for loop")
+    }
+}, 10000);
+//so the settimeout returns some of the id 
+console.log("this is outer loops")
+console.log(id)
+clearTimeout(id)
+
+
+/----set interval 
+
+
+const body =document.body;
+console.log(body)
+const button =document.querySelector('button')
+
+const id=setInterval(() => {
+    const red=Math.floor(Math.random() * 126)
+const green=Math.floor(Math.random() * 126)
+const blue=Math.floor(Math.random() * 126)
+const rgb= `rgb(${red},${green},${blue})`
+    body.style.background=rgb
+}, 1000);
+button.addEventListener("click",()=>{
+    clearInterval(id)
+    body.style.background="white"
+    button.textContent="reload"
+})
+
+callbacks -------------
+
+function gettwonumbers(number1,number2,callbacks,failures){
+    // console.log(number1,number2)
+    if(typeof number1==="number" && typeof number2==="number"){
+        callbacks(number1,number2);
+    }else{
+        failures();
+    }
+}
+// function addnumber(num1,num2){
+//     console.log(num1+num2)
+// }
+// gettwonumbers(3,4,addnumber)
+
+gettwonumbers(8,4,(num1,num2)=>{
+    console.log(num1+num2)
+},()=>{console.log("pleasse enter the right data type")})
+
+
+const body=document.body;
+const heading1=document.querySelector('.HEADING1')
+setTimeout(() => {
+    heading1.textContent="Ateef Quadri"
+    heading1.style.color="red"
+   
+}, 1000);
+
+callback hell
+const body=document.body;
+const heading1=document.querySelector('.HEADING1')
+setTimeout(() => {
+    heading1.textContent="Ateef Quadri"
+    heading1.style.color="red"
+    setTimeout(() => {
+        console.log("this is next timeout")
+    }, 1000);
+}, 1000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+---- Synchronous tasks----
+
+console.log("hi there")
+
+for(let i=0;i<1000;i++){
+    console.log("this is for")
+}
+
+console.log("this is end")
+
+
+
+
+
+
+
+
+----Asynchronous tasks----
+
+console.log("hi there")
+
+setTimeout(() => {
+    for(i=0;i<1000;i++){
+        console.log("this is for loop")
+    }
+}, 1000);
+console.log("this is the end")
+
+
+promise
+
+is is feature of browser
+when the promise is been executed it will be assigned to thr browser and then it can execute all the task leaving promise task
+const bucket=["vegetable","dsa","biscut","teapowder"]
+
+const newproblem=new Promise((resolv,rejec)=>{
+    if(bucket.includes("milk")&&bucket.includes("teapowder")&&bucket.includes("biscut")){
+         resolv("we can proceed with the next steps")
+    }else{
+        rejec("sorry we cant make anyting with it")
+    }
+
+})
+
+newproblem.then((myfriedtice)=>{console.log(myfriedtice)},(notbab)=>{console.log(`${notbab} this is it`)})
+
+
