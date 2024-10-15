@@ -1057,25 +1057,25 @@
 
 
 
-function thisisnow(heading,text,time,color){
-        const element=document.querySelector(`.${heading}`)
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                if(element){
-                    element.textContent=text
-                    element.style.color=color
-                    resolve();
-                }else{
-                    reject();
-                }
-            }, 
-        time);
-        })
-}
-thisisnow("HEADING1","Ateef",1000,"red")
-.then(()=>{
-    console.log("this is done")
-})
-.catch(()=>{
-    console.log("this is not done")
-})
+// function thisisnow(heading,text,time,color){
+//         const element=document.querySelector(`.${heading}`)
+//         return new Promise((resolve, reject) => {
+//             setTimeout(() => {
+//                 if(element){
+//                     element.textContent=text
+//                     element.style.color=color
+//                     resolve();
+//                 }else{
+//                     reject();
+//                 }
+//             }, 
+//         time);
+//         })
+// }
+// thisisnow("HEADING1","Ateef",1000,"red")
+// .then(()=>{
+//     console.log("this is done")
+// })
+// .catch(()=>{
+//     console.log("this is not done")
+// })
