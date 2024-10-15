@@ -1040,4 +1040,42 @@
 
 // newproblem.then((myfriedtice)=>{console.log(myfriedtice)},(notbab)=>{console.log(`${notbab} this is it`)})
 
+// function mypromise(){
+//     return new Promise((resolve,reject)=>{
+//         const value=false;
+//         if(value){
+//             resolve()
+//         }else{
+//             reject()
+//         }
+//     })
+// }
+// mypromise()
+// .finally(()=>{
+//     console.log("this is not valid")
+// })
 
+
+
+function thisisnow(heading,text,time,color){
+        const element=document.querySelector(`.${heading}`)
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                if(element){
+                    element.textContent=text
+                    element.style.color=color
+                    resolve();
+                }else{
+                    reject();
+                }
+            }, 
+        time);
+        })
+}
+thisisnow("HEADING1","Ateef",1000,"red")
+.then(()=>{
+    console.log("this is done")
+})
+.catch(()=>{
+    console.log("this is not done")
+})
