@@ -1,0 +1,17 @@
+// const add=require('./add')
+// const result=add.add(4,5)
+// const result2=add.sub(3,4)
+// console.log("hi there")
+// console.log(result2)
+// console.log(result)
+// const {add,sub}=require('./add')
+// import {add,sub} from './add'
+// const result=add(4,5)
+// const result2=sub(3,4)
+// console.log("hi there")
+// console.log(result2)
+// console.log(result)
+
+const add=require('./add')
+const result=add.add(3,7)
+console.log(result)
