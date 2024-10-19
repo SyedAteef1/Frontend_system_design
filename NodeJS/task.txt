@@ -1,0 +1,13 @@
+RESTAPI-JSON
+
+1.GET/user--should fetch all user
+
+GET/user/1--get user 1
+GET/user/2--get user 2
+
+POST/users/--create user 
+
+PATCH/users/1--edit the users of id 1
+
+
+DELETE/users/2--DELETE the user of id 2
